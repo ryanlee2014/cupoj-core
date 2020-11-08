@@ -1,0 +1,26 @@
+nacos:
+  config:
+    server-addr: 192.168.31.155:8848
+    username: nacos
+    password: nacos
+    auto-refresh: true
+  server-address: 192.168.31.155
+  port: 8848
+  username: nacos
+  password: nacos
+
+dubbo:
+  scan:
+    base-packages: com.cupacm.oj.service
+  registry:
+    address: nacos://${nacos.server-address}:${nacos.port}/?username=${nacos.username}&password=${nacos.password}
+  protocol:
+    name: dubbo
+    port: -1
+  service:
+    version: 1.0.0
+
+
+spring:
+  application:
+    name: cupoj_core

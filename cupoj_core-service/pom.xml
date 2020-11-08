@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cupoj_core</artifactId>
+        <groupId>com.cupacm</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <nacos.version>1.2.1</nacos.version>
+    </properties>
+
+    <artifactId>cupoj_core-service</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cupacm</groupId>
+            <artifactId>cupoj_core-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cupacm</groupId>
+            <artifactId>cupoj_core-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cupacm</groupId>
+            <artifactId>cupoj_core-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cupacm</groupId>
+            <artifactId>cupoj_core-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>

@@ -1,0 +1,8 @@
+# Project exclude paths
+/cupoj_core-api/target/
+/cupoj_core-common/target/
+/cupoj_core-main/target/
+/cupoj_core-manager/target/
+/cupoj_core-orm/target/
+/cupoj_core-service/target/
+/target/
