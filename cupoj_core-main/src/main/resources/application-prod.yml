@@ -1,5 +1,10 @@
 nacos:
-  server-address: 192.168.31.155
+  config:
+    server-addr: nacos:8848
+    username: nacos
+    password: nacos
+    auto-refresh: true
+  server-address: nacos
   port: 8848
   username: nacos
   password: nacos
@@ -19,3 +24,11 @@ dubbo:
 spring:
   application:
     name: cupoj_core
+
+
+server:
+  tomcat:
+    threads:
+      min-spare: 50
+      max: 1500
+  port: 8081

@@ -1,7 +1,7 @@
 package com.cupacm.oj.manager.schedule.impl;
 
+import com.cupacm.oj.api.bo.SimNode;
 import com.cupacm.oj.manager.CheatingMapManager;
-import com.cupacm.oj.manager.model.SimNode;
 import com.cupacm.oj.manager.schedule.CheatingMapSchedule;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;

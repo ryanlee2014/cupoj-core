@@ -1,6 +1,6 @@
 package com.cupacm.oj.manager.schedule.job;
 
-import com.cupacm.oj.annotation.RequestLogging;
+import com.cupacm.oj.common.annotation.RequestLogging;
 import com.cupacm.oj.manager.schedule.CheatingMapSchedule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

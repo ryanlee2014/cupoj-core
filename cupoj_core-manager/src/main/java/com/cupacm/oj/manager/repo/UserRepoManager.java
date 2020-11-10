@@ -1,15 +1,15 @@
 package com.cupacm.oj.manager.repo;
 
-import com.cupacm.oj.annotation.RequestLogging;
+import com.cupacm.oj.common.annotation.RequestLogging;
 import com.cupacm.oj.dao.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Component
 public class UserRepoManager {
-    @Autowired
+    @Resource
     private UsersMapper usersMapper;
 
     @RequestLogging

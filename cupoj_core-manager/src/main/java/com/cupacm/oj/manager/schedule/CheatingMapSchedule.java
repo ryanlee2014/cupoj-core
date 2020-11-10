@@ -1,6 +1,6 @@
 package com.cupacm.oj.manager.schedule;
 
-import com.cupacm.oj.manager.model.SimNode;
+import com.cupacm.oj.api.bo.SimNode;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;

@@ -1,6 +1,6 @@
-package com.cupacm.oj.interceptor;
+package com.cupacm.oj.common.interceptor;
 
-import com.cupacm.oj.annotation.RequestLogging;
+import com.cupacm.oj.common.annotation.RequestLogging;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import org.aspectj.lang.ProceedingJoinPoint;

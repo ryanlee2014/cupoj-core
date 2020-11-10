@@ -1,7 +1,7 @@
 package com.cupacm.oj.manager;
 
+import com.cupacm.oj.api.bo.SimNode;
 import com.cupacm.oj.dao.Sim;
-import com.cupacm.oj.manager.model.SimNode;
 import com.cupacm.oj.manager.repo.SimRepoManager;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -29,9 +30,9 @@ public class CheatingMapManager {
         long simCount = simRepoManager.getTotalCountOfSim();
         List<Future<List<Sim>>> simList = Lists.newArrayList();
         List<Sim> sims = Lists.newArrayList();
-        for(int i = 0; i < simCount / 100; ++i) {
+        for(int i = 0; i < simCount / 10000; ++i) {
             int finalI = i;
-            Future<List<Sim>> listFuture = threadPoolExecutor.submit(() -> simRepoManager.getSimRecordByRowBound(finalI * 100, 100));
+            Future<List<Sim>> listFuture = threadPoolExecutor.submit(() -> simRepoManager.getSimRecordByRowBound(finalI * 10000, 10000));
             simList.add(listFuture);
         }
         for (Future<List<Sim>> listFuture : simList) {
@@ -53,7 +54,7 @@ public class CheatingMapManager {
             }
             simNodeMap.put(hash, node);
         }
-        List<SimNode> resultSim = simNodeMap.values().stream().collect(Collectors.toList());
+        List<SimNode> resultSim = new ArrayList<>(simNodeMap.values());
         return resultSim.parallelStream().sorted(((a, b) -> {
             Integer aValue = a.getValue();
             Integer bValue = b.getValue();
