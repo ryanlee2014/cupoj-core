@@ -12,7 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@NacosPropertySource(dataId = DatabaseConfiguration.DATA_ID, groupId = DatabaseConfiguration.GROUP_ID, autoRefreshed = true)
+@NacosPropertySource(dataId = DatabaseConfiguration.DATA_ID, groupId = DatabaseConfiguration.GROUP_ID, autoRefreshed = true,
+        properties = @NacosProperties(encode = "UTF-8"))
 @Configuration
 @Getter
 @Slf4j
@@ -46,8 +47,7 @@ public class DatabaseConfiguration {
     public String getConfig(String configName) {
         try {
             return configService.getConfig(configName, GROUP_ID, 5000);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
     }
