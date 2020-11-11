@@ -26,10 +26,10 @@ public class MybatisConfiguration {
     @Bean
     public DataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName(databaseConfiguration.getDriverClassName());
-        dataSource.setUrl(databaseConfiguration.getUrl());
-        dataSource.setUsername(databaseConfiguration.getUsername());
-        dataSource.setPassword(databaseConfiguration.getPassword());
+        dataSource.setDriverClassName(databaseConfiguration.getConfig("driver_class_name"));
+        dataSource.setUrl(databaseConfiguration.getConfig("url"));
+        dataSource.setUsername(databaseConfiguration.getConfig("username"));
+        dataSource.setPassword(databaseConfiguration.getConfig("password"));
         dataSource.setMinIdle(10);
         dataSource.setMaxActive(50);
         dataSource.setInitialSize(10);
