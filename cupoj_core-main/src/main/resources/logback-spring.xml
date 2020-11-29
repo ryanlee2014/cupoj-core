@@ -46,7 +46,7 @@
     <springProfile name="dev">
         <logger name="org" level="INFO"/>
         <!-- level: FATAL,ERROR,WARN,INFO,DEBUG,TRACE -->
-        <root level="DEBUG">
+        <root level="INFO">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="app"/>
             <appender-ref ref="app-error"/>

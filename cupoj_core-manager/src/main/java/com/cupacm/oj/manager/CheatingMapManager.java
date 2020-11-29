@@ -30,9 +30,9 @@ public class CheatingMapManager {
         long simCount = simRepoManager.getTotalCountOfSim();
         List<Future<List<Sim>>> simList = Lists.newArrayList();
         List<Sim> sims = Lists.newArrayList();
-        for(int i = 0; i < simCount / 10000; ++i) {
+        for(int i = 0; i < simCount / 50000; ++i) {
             int finalI = i;
-            Future<List<Sim>> listFuture = threadPoolExecutor.submit(() -> simRepoManager.getSimRecordByRowBound(finalI * 10000, 10000));
+            Future<List<Sim>> listFuture = threadPoolExecutor.submit(() -> simRepoManager.getSimRecordByRowBound(finalI * 50000, 50000));
             simList.add(listFuture);
         }
         for (Future<List<Sim>> listFuture : simList) {

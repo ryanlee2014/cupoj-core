@@ -13,4 +13,9 @@ public class AsyncConfig {
     public ThreadPoolExecutor asyncExecutor() {
         return new ThreadPoolExecutor(150, 500, 1000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(500));
     }
+
+    @Bean("statisticsThreadPool")
+    public ThreadPoolExecutor statisticsExecutor() {
+        return new ThreadPoolExecutor(150, 500, 1000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(10000), new ThreadPoolExecutor.AbortPolicy());
+    }
 }

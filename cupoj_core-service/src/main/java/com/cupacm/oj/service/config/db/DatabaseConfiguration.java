@@ -8,6 +8,7 @@ import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import com.cupacm.oj.common.annotation.RequestLogging;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 @Configuration
 @Getter
 @Slf4j
+@ToString
 public class DatabaseConfiguration {
 
     public static final String DATA_ID = "database";
@@ -35,7 +37,7 @@ public class DatabaseConfiguration {
     @NacosValue(value = "${password}", autoRefreshed = true)
     private String password;
 
-    @NacosValue(value = "${driver_class_name}", autoRefreshed = true)
+    @NacosValue(value = "${driver}", autoRefreshed = true)
     private String driverClassName;
 
     @NacosConfigListener(dataId = "database", timeout = 50)

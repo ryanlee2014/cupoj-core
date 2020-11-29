@@ -6,6 +6,7 @@ import com.cupacm.oj.manager.UserManager;
 import com.cupacm.oj.api.bo.SimNode;
 import com.cupacm.oj.manager.schedule.CheatingMapSchedule;
 import com.cupacm.oj.service.config.db.DatabaseConfiguration;
+import com.cupacm.oj.service.config.system.SystemConfiguration;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +23,21 @@ public class ConfigController {
     private DatabaseConfiguration databaseConfiguration;
 
     @Autowired
+    private SystemConfiguration systemConfiguration;
+
+    @Autowired
     private UserManager userManager;
 
     @RequestMapping("/config")
     @RequestLogging(withResponse = true)
     public String getConfig() {
-        return new Gson().toJson(databaseConfiguration.getDriverClassName());
+        return new Gson().toJson(databaseConfiguration.toString());
+    }
+
+    @RequestMapping("/system")
+    @RequestLogging(withResponse = true)
+    public String getSystem() {
+        return new Gson().toJson(systemConfiguration.isDebug());
     }
 
     @RequestLogging(withResponse = true)

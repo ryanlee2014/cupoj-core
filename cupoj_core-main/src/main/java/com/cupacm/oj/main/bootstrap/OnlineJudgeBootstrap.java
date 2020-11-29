@@ -13,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 }, exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class OnlineJudgeBootstrap {
     public static void main(String[] args) {
+        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","500");
         ApplicationContext context = new SpringApplicationBuilder(OnlineJudgeBootstrap.class).run(args);
     }
 }

@@ -31,7 +31,7 @@ public class MybatisConfiguration {
         dataSource.setUsername(databaseConfiguration.getConfig("username"));
         dataSource.setPassword(databaseConfiguration.getConfig("password"));
         dataSource.setMinIdle(10);
-        dataSource.setMaxActive(50);
+        dataSource.setMaxActive(2000);
         dataSource.setInitialSize(10);
         log.info("dataSource: {}", new Gson().toJson(databaseConfiguration.getConfig("database")));
         return dataSource;

@@ -19,4 +19,18 @@ public class UserRepoManager {
                 .andUserIdEqualTo(userId);
         return usersMapper.selectByExample(usersExample);
     }
+
+    @RequestLogging
+    public List<Users> getAllUsers() {
+        UsersExample usersExample = new UsersExample();
+        usersExample.createCriteria();
+        return usersMapper.selectByExample(usersExample);
+    }
+
+    @RequestLogging
+    public List<Users> getSolvedUsers() {
+        UsersExample usersExample = new UsersExample();
+        usersExample.createCriteria().andSolvedGreaterThan(0);
+        return usersMapper.selectByExample(usersExample);
+    }
 }
